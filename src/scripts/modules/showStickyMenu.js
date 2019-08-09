@@ -4,7 +4,7 @@ const showStickyMenu = (menuSelector) => {
 
   window.addEventListener('scroll', () => {
     let bodyCords = document.body.getBoundingClientRect();
-    if (bodyCords.y < -150)
+    if (bodyCords.y < -150 || bodyCords.top < -150)
       menu.style.display = 'block';
     else
       menu.style.display = 'none';
