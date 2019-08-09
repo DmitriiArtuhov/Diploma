@@ -12,17 +12,26 @@ const modalToggle = (menu, menuActive, closeBtn) => {
 		modalMenu.classList.add('closed_support_modal');
 		openBtn.style.transition = '.2s ease-in-out';
 
+		if(window.innerWidth <= 1200) {
+			openBtn.style.marginRight = '-13rem';
+		}
+
 		window.addEventListener('click', (e) => {
 			if(e.target.closest('.main-support')) {
 				// open
-				if(window.innerWidth < 1200) {
-					document.querySelector('.main-support').style.marginRight = '0';
+				console.log(openBtn.style.marginRight);
+				if(openBtn.style.marginRight === '-13rem') {
+					openBtn.style.marginRight = '0';
+					return;
 				}
 				modalMenu.classList.add(menuActive);
+				if(window.innerWidth <= 1200) {
+					openBtn.style.marginRight = '-13rem';
+				}
 			} else if(!e.target.closest(menu) || e.target.matches(closeBtn)) {
 				// close
 				if(window.innerWidth < 1200) {
-					document.querySelector('.main-support').style.marginRight = '-13rem';
+					openBtn.style.marginRight = '-13rem';
 				}
 				modalMenu.classList.remove(menuActive);
 			}

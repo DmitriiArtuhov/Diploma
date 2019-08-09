@@ -5,8 +5,8 @@ const arrowScrollSnap = (arrowsContainerSelector, arrowSelector) => {
   arrowsContainer.addEventListener('click', (e) => {
     let target = e.target;
     if(!target.closest(arrowSelector)) return;
-
-    e.preventDefault();
+ 
+    e.preventDefault ? e.preventDefault() : (e.returnValue = false);
     target = target.closest(arrowSelector);
 
     if(target.getAttribute('href') !== null) {
