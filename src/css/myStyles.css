@@ -65,3 +65,15 @@ div.modal_support_active {
 .sl2-slide {
 	width: 100%;
 }
+
+/* Аккордион */
+.accordion-item {
+	position: relative;
+	opacity: 1;
+	/* height: 100%; */
+	max-height: 0px;
+	display: block;
+	overflow: hidden;
+	transition: .4s ease-out;
+}
+

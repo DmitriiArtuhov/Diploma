@@ -14,6 +14,7 @@ import showStickyMenu from './modules/showStickyMenu';
 import calc from './modules/calc';
 import postEdit from './modules/post.js';
 import sliderClients from './modules/sliderClients';
+import accordion from './modules/accordion';
 
 // menus popup
 modalToggle('.modal_support', 'modal_support_active', '.support-header img');
@@ -33,3 +34,7 @@ calc('.calc-container', '#select-calc', '.radio-btn-parent', '#total-price');
 postEdit();
 //client slider
 sliderClients('.btn-client-right', '.btn-client-left', '#client-slider', '.sl2-slide');
+// accordeon
+accordion();
+
+
