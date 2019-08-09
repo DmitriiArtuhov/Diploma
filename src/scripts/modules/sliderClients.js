@@ -20,9 +20,7 @@ const sliderClients = (btnRightSelector, btnLeftSelector, sliderSelector, slides
   }
 
   const changeSlide = () => {
-    slider.style.cssText = `
-      transform: translateX(calc(-33.33% * ${currentSlideIndex}));
-    `;
+    slider.style.cssText = 'transform: translateX(calc(-33.33% * ' + currentSlideIndex + '));';
   }
   
   btnRight.addEventListener('click', (e) => {

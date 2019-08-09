@@ -4,20 +4,6 @@ const postEdit = () => {
 	let postsPreserved = [];
 	let postImgs = [];
 
-	posts.forEach((post) => {
-		let postParagraph = post.querySelectorAll('p')[0];
-		let postImg = post.querySelector('img');
-
-
-		postsPreserved.push(postParagraph.textContent);
-		postImgs.push(postImg);
-
-		if(postParagraph.textContent.trim().split(' ').length > 50) {
-			postParagraph.textContent = postParagraph.textContent.trim().split(' ').splice(0, 50).join(' ') + '...';
-		}
-	});
-
-
 	const trimPost = (index) => {
 		let postParagraph = posts[index].querySelectorAll('p')[0];
 
@@ -40,6 +26,17 @@ const postEdit = () => {
 		postText.textContent = postsPreserved[index];
 		readMoreBtns[index].textContent = 'скрыть запись';
 	}
+
+	
+	posts.forEach((post, index) => {
+		let postParagraph = post.querySelectorAll('p')[0];
+		let postImg = post.querySelector('img');
+
+		postsPreserved.push(postParagraph.textContent);
+		postImgs.push(postImg);
+		
+		trimPost(index);
+	});
 
 	readMoreBtns.forEach((item, index) => {
 		item.addEventListener('click', (e) => {
