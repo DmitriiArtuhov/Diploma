@@ -21,58 +21,56 @@ const calc = (mainContainerSelector, optionsParentSelector, radioBtnParentSelect
       }
     });
 
-    if (customersAmount === 1) {
-      result = customersAmount * term * 1000;
-      if(term === 12) {
-        result = customersAmount * term * 1000;
-        result -= result * 10 / 100;
-      }
-    } else if(customersAmount === 2) {
-      x = 19/20;
+    const coutResult = (x) => {
       result = customersAmount * term * 1000 * x;
+    }
+
+    const decreaseResult = () => {
+      result -= result * 10 / 100;
+    }
+
+    switch(customersAmount) {
+      case 2:
+        x = 19/20;
+        break;
+
+      case 3:
+        x = 0.9;
+        break;
+
+      case 5:
+        x = 0.9;
+        break;
+
+      case 7:
+        x = 6/7;
+        break;
+
+      case 10:
+        x = 0.8;
+        break;
+
+      default:
+        x = 1;
+    }
+
+    if (!isNaN(customersAmount)) {
+      coutResult(x);
       if (term === 12) {
-        result = customersAmount * term * 1000 * x;
-        result -= result * 10 / 100;
+        coutResult(x);
+        decreaseResult();
       }
-    } else if(customersAmount === 3) {
-      x = 0.9;
-      result = customersAmount * term * 1000 * x;
-      if (term === 12) {
-        result = customersAmount * term * 1000 * x;
-        result -= result * 10 / 100;
-      }
-    } else if(customersAmount === 5) {
-      x = 0.9;
-      result = customersAmount * term * 1000 * x;
-      if (term === 12) {
-        result = customersAmount * term * 1000 * x;
-        result -= result * 10 / 100;
-      }
-    } else if(customersAmount === 7) {
-      x = 6/7;
-      result = customersAmount * term * 1000 * x;
-      if (term === 12) {
-        result = customersAmount * term * 1000 * x;
-        result -= result * 10 / 100;
-      }
-    } else if(customersAmount === 10) {
-      x = 0.8;
-      result = customersAmount * term * 1000 * x;
-      if (term === 12) {
-        result = customersAmount * term * 1000 * x;
-        result -= result * 10 / 100;
-      }
-    } else if(isNaN(customersAmount)) {
-      x = 1;
+    } else {
       result = 10 * term * 1000 * x;
       if (term === 12) {
         result = 10 * term * 1000 * x;
-        result -= result * 10 / 100;
+        decreaseResult();
       }
     }
 
     output.textContent = result;
   });
+
 
 }
 
