@@ -8,7 +8,7 @@ import 'fetch-polyfill';
 import smoothscroll from 'smoothscroll-polyfill';
 smoothscroll.polyfill();
 
-import modalToggle from './modules/modalToggle';
+import modals from './modules/modals';
 import scrollMenu from './modules/scrollMenu';
 import scrollSnap from './modules/scrollSnap';
 import arrowScrollSnap from './modules/arrowScrollSnap';
@@ -17,10 +17,10 @@ import calc from './modules/calc';
 import postEdit from './modules/post.js';
 import sliderClients from './modules/sliderClients';
 import accordion from './modules/accordion';
+import formProccessing from './modules/formProccessing';
 
 // menus popup
-modalToggle('.modal_support', 'modal_support_active', '.support-header img');
-modalToggle('.modal_offer', 'modal_support_active', '.support-header img');
+modals();
 // scroll anchor
 scrollMenu('.two', 'a');
 scrollMenu('.two-mini', 'a');
@@ -38,5 +38,10 @@ postEdit();
 sliderClients('.btn-client-right', '.btn-client-left', '#client-slider', '.sl2-slide');
 // accordeon
 accordion();
+//form stuff
+//support form
+formProccessing('.form__support', '.user_email-support', '.user_name-support');
+//offer form
+formProccessing('.form__offer', '.user_email-offer', '.user_name-offer');
 
 
