@@ -20,17 +20,19 @@ const sliderClients = (btnRightSelector, btnLeftSelector, sliderSelector, slides
   }
 
   const changeSlide = () => {
-    slider.style.cssText = '-ms-transform: translateX(calc(-33.33% * ' + currentSlideIndex + ')); -webkit-transform: translateX(calc(-33.33% * ' + currentSlideIndex + ')); -moz-transform: translateX(calc(-33.33% * ' + currentSlideIndex + ')); -o-transform: translateX(calc(-33.33% * ' + currentSlideIndex + ')); transform: translateX(calc(-33.33% * ' + currentSlideIndex + '));';
+    slider.style.cssText = '-ms-transform: translateX(' + (-33.33 * currentSlideIndex) + '%);transform: translateX(' + (-33.33 * currentSlideIndex) + '%);';
   }
   
   btnRight.addEventListener('click', (e) => {
     nextSlideShow();
     changeSlide();
+    console.log('next slide');
   });
 
   btnLeft.addEventListener('click', (e) => {
     prevSlideShow();
     changeSlide();
+    console.log('previous slide');
   });
 }
 
