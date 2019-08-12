@@ -1,4 +1,11 @@
 const modals = () => {
+	const sections = document.querySelectorAll('section');
+	const pageHeight = Math.max(
+		document.body.scrollHeight, document.documentElement.scrollHeight,
+		document.body.offsetHeight, document.documentElement.offsetHeight,
+		document.body.clientHeight, document.documentElement.clientHeight
+	);
+
 	const timer = setTimeout(() => {
 		// open offer menu
 		const modalMenu = document.querySelector('.modal_offer');
@@ -7,7 +14,9 @@ const modals = () => {
 	}, 1000 * 60);
 
 	const checkScroll = () => {
-		if(window.pageYOffset > 11000) {
+		console.log(document.body.offsetHeight - sections[sections.length - 1].clientHeight);
+
+		if(window.pageYOffset + sections[sections.length - 1].clientHeight > document.body.offsetHeight - sections[sections.length - 1].clientHeight) {
 			// open offer menu
 			const modalMenu = document.querySelector('.modal_offer');
 			modalMenu.classList.add('closed_offer_modal');
@@ -18,7 +27,7 @@ const modals = () => {
 		}
 	}
 
-	const scrollEvent = window.addEventListener('scroll', checkScroll);
+	window.addEventListener('scroll', checkScroll);
 
 	const supportMenu = (menu, menuActive, closeBtn) => {
 		window.addEventListener('resize', () => {
