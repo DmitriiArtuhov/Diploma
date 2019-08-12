@@ -20,13 +20,15 @@ import accordion from './modules/accordion';
 import formProccessing from './modules/formProccessing';
 import partnerSlider from './modules/partnerSlider';
 
+
+
 // menus popup
 modals();
 // scroll anchor
 scrollMenu('.two', 'a');
 scrollMenu('.two-mini', 'a');
 scrollMenu('.footer-top', 'a');
-// scroll snap
+// // scroll snap
 scrollSnap('body','section');
 arrowScrollSnap('body', '.arrow-down-link');
 // mini menu
@@ -46,5 +48,3 @@ formProccessing('.form__support', '.user_email-support', '.user_name-support');
 formProccessing('.form__offer', '.user_email-offer', '.user_name-offer');
 // partners slider
 partnerSlider('.btn-partner-right', '.btn-partner-left', '.sl-slide', '.sl-container');
-
-
