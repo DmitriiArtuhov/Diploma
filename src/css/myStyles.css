@@ -77,3 +77,101 @@ div.modal_support_active {
 	transition: .4s ease-out;
 }
 
+/* Слайдер с партнерами */
+
+.sl-slide {
+	transition: 0.5s;
+	min-width: 140px;
+	max-width: 140px;
+	margin: 0;
+}
+
+.sl-container {
+	margin: 0 auto;
+	width: 840px;
+	overflow: hidden;
+}
+
+
+@media (max-width: 1200px) {
+	
+	.sl-container {
+		width: 720px;
+	}
+
+
+	.sl-slide {
+		min-width: 120px;
+		max-width: 120px;
+		margin: 0;
+	}
+}
+
+@media (max-width: 992px) {
+
+	
+	.sl-container {
+		width: 570px;
+	}
+
+	.sl-slide {
+		min-width: 95px;
+		max-width: 95px;
+		margin: 0;
+	}
+}
+
+@media (max-width: 768px) {
+	
+	.sl-container {
+		width: 390px;
+	}
+
+	.sl-slide {
+		min-width: 130px;
+		max-width: 130px;
+		margin: 0;
+	}
+}
+
+@media (max-width: 576px) {
+
+	.sl-container {
+		width: 300px;
+	}
+	
+	.sl-slide {
+		min-width: 100px;
+		max-width: 100px;
+		margin: 0;
+	}
+}
+
+@media (max-width: 480px) {
+
+	.sl-container {
+		width: 210px;
+	}
+
+	.sl-slide {
+		min-width: 70px;
+		max-width: 70px;
+		margin: 0;
+	}
+}
+
+.sl {
+	display: flex;
+	transition: 0.8s;
+	width: 100%;
+}
+
+.btn-partner-right {
+	right: 10%;
+	background: url('../img/Block10/arrowright.png') no-repeat center center;
+}
+
+.btn-partner-left {
+	left: 10%;
+	background: url('../img/Block10/arrowleft.png') no-repeat center center;
+}

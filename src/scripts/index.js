@@ -18,6 +18,7 @@ import postEdit from './modules/post.js';
 import sliderClients from './modules/sliderClients';
 import accordion from './modules/accordion';
 import formProccessing from './modules/formProccessing';
+import partnerSlider from './modules/partnerSlider';
 
 // menus popup
 modals();
@@ -43,5 +44,7 @@ accordion();
 formProccessing('.form__support', '.user_email-support', '.user_name-support');
 //offer form
 formProccessing('.form__offer', '.user_email-offer', '.user_name-offer');
+// partners slider
+partnerSlider('.btn-partner-right', '.btn-partner-left', '.sl-slide', '.sl-container');
 
 

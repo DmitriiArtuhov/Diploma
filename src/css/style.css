@@ -797,7 +797,7 @@ tr.seven-table-cloud td {
 	margin-top: 3rem
 }
 
-.sl {
+/* .sl {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -808,7 +808,7 @@ tr.seven-table-cloud td {
 	justify-content: center;
 	margin: 0 auto;
 	width: 85%
-}
+} */
 
 .sl-slide img {
 	display: block;
