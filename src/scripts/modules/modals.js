@@ -14,8 +14,6 @@ const modals = () => {
 	}, 1000 * 60);
 
 	const checkScroll = () => {
-		console.log(document.body.offsetHeight - sections[sections.length - 1].clientHeight);
-
 		if(window.pageYOffset + sections[sections.length - 1].clientHeight > document.body.offsetHeight - sections[sections.length - 1].clientHeight) {
 			// open offer menu
 			const modalMenu = document.querySelector('.modal_offer');
@@ -50,6 +48,8 @@ const modals = () => {
 	
 		window.addEventListener('click', (e) => {
 			if(e.target.closest('.main-support')) {
+				// delete bottom menu
+				window.removeEventListener('scroll', checkScroll);
 				// clearing timer
 				clearTimeout(timer);
 				// open
@@ -77,6 +77,8 @@ const modals = () => {
 		
 		window.addEventListener('click', (e) => {
 			if(e.target.closest('.main-try')) {
+				// delete bottom menu
+				window.removeEventListener('scroll', checkScroll);
 				// clearing timer
 				clearTimeout(timer);
 				// open

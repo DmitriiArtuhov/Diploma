@@ -26,13 +26,11 @@ const sliderClients = (btnRightSelector, btnLeftSelector, sliderSelector, slides
   btnRight.addEventListener('click', (e) => {
     nextSlideShow();
     changeSlide();
-    console.log('next slide');
   });
 
   btnLeft.addEventListener('click', (e) => {
     prevSlideShow();
     changeSlide();
-    console.log('previous slide');
   });
 }
 
